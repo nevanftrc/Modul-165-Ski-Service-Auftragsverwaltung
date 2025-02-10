@@ -38,3 +38,19 @@ C#/.vs
 C#/SaveUp_App/obj
 C#/SaveUp_App/bin
 *.csproj.user
+
+
+# Ignorar archivos temporales de compilación
+bin/
+obj/
+Debug/
+Release/
+
+# Ignorar archivos de configuración de NuGet
+*.cache
+project.assets.json
+*.nuget.dgspec.json
+*.lock.json
+
+# Ignorar archivos específicos de Visual Studio
+.vs/
