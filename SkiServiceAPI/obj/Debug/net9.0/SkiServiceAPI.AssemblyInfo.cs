@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkiServiceAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ead7008cbe097780272f91255a515768dc9a555")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+781be070e8f81e96566e0288102af2755bf58fe4")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkiServiceAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkiServiceAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
