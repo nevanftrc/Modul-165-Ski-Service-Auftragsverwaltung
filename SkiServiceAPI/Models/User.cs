@@ -3,16 +3,23 @@ using MongoDB.Bson;
 
 namespace SkiServiceAPI.Models
 {
-    public class User
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
+
+    [BsonRequired]
+    public string UserName { get; set; }
+
+    [BsonRequired]
+    private string Passwort { get; set; } // Hacerlo privado para no exponerlo directamente.
+
+    public void SetPassword(string password)
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        Passwort = BCrypt.Net.BCrypt.HashPassword(password);
+    }
 
-        [BsonRequired]
-        public string UserName { get; set; }
-
-        [BsonRequired]
-        public string Password { get; set; }
+    public bool VerifyPassword(string password)
+    {
+        return BCrypt.Net.BCrypt.Verify(password, Passwort);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SkiServiceAPI.Data;
 using SkiServiceAPI.Models;
+using SkiServiceAPI.Services;
 
 namespace SkiServiceAPI.Controllers
 {
@@ -21,8 +22,9 @@ namespace SkiServiceAPI.Controllers
             if (await _context.User.AnyAsync(u => u.UserName == user.UserName))
                 return BadRequest("The username already exists");
 
-            _context.User.Add(user);
-            await _context.SaveChangesAsync();
+            user.SetPassword(user.Passwort);
+            await _context.Users.InsertOneAsync(user);
+
             return Ok("User successfully registered.");
         }
 
